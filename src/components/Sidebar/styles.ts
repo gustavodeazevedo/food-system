@@ -55,8 +55,6 @@ export const Container = styled.aside<ContainerProps>`
         align-items: center;
         gap: 2rem;
 
- 
- 
         svg {
           fill: ${({ theme }) => theme.colors.white};
           width: 4rem;
@@ -97,8 +95,8 @@ export const Container = styled.aside<ContainerProps>`
       }
     }
   }
- 
-  @media (max-width: 720px){
+
+  @media (max-width: 720px) {
     position: fixed;
     left: 0;
     right: 0;
@@ -107,45 +105,42 @@ export const Container = styled.aside<ContainerProps>`
 
     width: 100%;
     height: 5rem;
+    overflow-y: auto;
     padding: 0 0;
-    overflow-y: auto; 
 
-    button{
+    button {
       display: none;
     }
 
-    nav{
+    nav {
       height: 100%;
-    
-      ul{
+
+      ul {
         flex-direction: row;
         align-items: center;
       }
 
-      li{
-        a{
+      li {
+        a {
           flex-direction: column;
           padding: 0rem;
 
-          svg{
+          svg {
             width: 3.25rem;
             height: 3.25rem;
           }
 
-          span{
+          span {
             display: none;
           }
 
-          &.active{
-            &::after{
+          &.active {
+            &::after {
               display: none;
             }
           }
         }
       }
     }
-
-  } 
-
-
+  }
 `
