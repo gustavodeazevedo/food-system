@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/food-system/static/css/main.f029a054.css",
+    "main.js": "/food-system/static/js/main.7de27316.js",
+    "static/js/453.3e766600.chunk.js": "/food-system/static/js/453.3e766600.chunk.js",
+    "static/media/logo.svg": "/food-system/static/media/logo.776fd2f26bbaceaa94cb37eacda1125a.svg",
+    "static/media/pizza.svg": "/food-system/static/media/pizza.7597709b6de8ebcd12ee8d59b8a933d6.svg",
+    "static/media/burger.svg": "/food-system/static/media/burger.ba7a8a0db54444ea776a4e810868cd63.svg",
+    "static/media/soda.svg": "/food-system/static/media/soda.cf3f9ec6dcabf9d51e8fd58fd459b0fa.svg",
+    "static/media/ice-cream.svg": "/food-system/static/media/ice-cream.5f5274f9466778cb55c388b83c6293ee.svg",
+    "static/media/shopping-cart.svg": "/food-system/static/media/shopping-cart.25d65fd4129d9dc579d2b101ff86f6aa.svg",
+    "index.html": "/food-system/index.html",
+    "static/media/menu.svg": "/food-system/static/media/menu.84f2d6de86bf1c8f59292b480bb931ba.svg",
+    "main.f029a054.css.map": "/food-system/static/css/main.f029a054.css.map",
+    "main.7de27316.js.map": "/food-system/static/js/main.7de27316.js.map",
+    "453.3e766600.chunk.js.map": "/food-system/static/js/453.3e766600.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f029a054.css",
+    "static/js/main.7de27316.js"
+  ]
+}
