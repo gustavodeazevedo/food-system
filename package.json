@@ -1,7 +1,7 @@
 {
   "name": "food-commerce-dev",
   "version": "0.1.0",
-  "homepage": "https://gustavodeazevedo.github.io/food-system",
+  "homepage": "https://gustavodeazevedo.github.io/food-system/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
