@@ -12,12 +12,17 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "axios": "^0.27.2",
+<<<<<<< HEAD
     "gh-pages": "^6.1.1",
+=======
+    "polished": "^4.3.1",
+>>>>>>> ccf68a7cd17186aa1a0d4c993badf4148d7fd848
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "^5.0.1",
+    "react-toastify": "^10.0.5",
     "styled-components": "^5.3.11",
     "styled-normalize": "^8.1.1",
     "typescript": "^4.9.5",
