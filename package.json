@@ -12,11 +12,8 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "axios": "^0.27.2",
-<<<<<<< HEAD
     "gh-pages": "^6.1.1",
-=======
     "polished": "^4.3.1",
->>>>>>> ccf68a7cd17186aa1a0d4c993badf4148d7fd848
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
