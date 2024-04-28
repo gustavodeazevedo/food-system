@@ -2,6 +2,7 @@ import { createContext, ReactNode, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
+import { CustomerData } from '../interfaces/CustomerData'
 import { SnackData } from '../interfaces/SnackData'
 
 import { snackEmoji } from '../helpers/snackEmoji'
@@ -18,7 +19,7 @@ interface CartContextProps {
   snackCartIncrement: (snack: Snack) => void
   snackCartDecrement: (snack: Snack) => void
   confirmOrder: () => void
-  payOrder: () => void
+  payOrder: (customer: CustomerData) => void
 }
 
 interface CartProviderProps {
@@ -27,9 +28,25 @@ interface CartProviderProps {
 
 export const CartContext = createContext({} as CartContextProps)
 
+const localStorageKey = '@FoodCommerce:cart'
+
 export function CartProvider({ children }: CartProviderProps) {
   const navigate = useNavigate()
-  const [cart, setCart] = useState<Snack[]>([])
+  const [cart, setCart] = useState<Snack[]>(() => {
+    const value = localStorage.getItem(localStorageKey)
+    if (value) return JSON.parse(value)
+
+    return []
+  })
+
+  function saveCart(items: Snack[]) {
+    setCart(items)
+    localStorage.setItem(localStorageKey, JSON.stringify(items))
+  }
+
+  function clearCart() {
+    localStorage.removeItem(localStorageKey)
+  }
 
   function addSnackIntoCart(snack: SnackData): void {
     const snackExistentInCart = cart.find(
@@ -49,7 +66,7 @@ export function CartProvider({ children }: CartProviderProps) {
       })
 
       toast.success(`Outro(a) ${snackEmoji(snack.snack)} ${snack.name} adicionado nos pedidos!`)
-      setCart(newCart)
+      saveCart(newCart)
 
       return
     }
@@ -58,13 +75,13 @@ export function CartProvider({ children }: CartProviderProps) {
     const newCart = [...cart, newSnack] // push de um array
 
     toast.success(`${snackEmoji(snack.snack)} ${snack.name} adicionado nos pedidos!`)
-    setCart(newCart)
+    saveCart(newCart)
   }
 
   function removeSnackFromCart(snack: Snack) {
     const newCart = cart.filter((item) => !(item.id === snack.id && item.snack === snack.snack))
 
-    setCart(newCart)
+    saveCart(newCart)
   }
 
   function updateSnackQuantity(snack: Snack, newQuantity: number) {
@@ -88,7 +105,7 @@ export function CartProvider({ children }: CartProviderProps) {
       return item
     })
 
-    setCart(newCart)
+    saveCart(newCart)
   }
 
   function snackCartIncrement(snack: Snack) {
@@ -103,7 +120,12 @@ export function CartProvider({ children }: CartProviderProps) {
     navigate('/payment')
   }
 
-  function payOrder() {
+  function payOrder(customer: CustomerData) {
+    console.log('payOrder', cart, customer)
+    // chamada de API para o backend
+
+    clearCart() // deve ser executado após retorno positivo da API
+
     return
   }
 

@@ -5,15 +5,13 @@ import { currencyFormat } from '../../../helpers/currencyFormat'
 import { Container } from '../style'
 
 export function PayOrder() {
-  const { cart, payOrder } = useCart()
+  const { cart } = useCart()
 
   const totalAmount = cart.reduce((acc, item) => (acc += item.subtotal), 0)
 
   return (
     <Container>
-      <button type='button' onClick={payOrder}>
-        Pagar
-      </button>
+      <button type='submit'>Pagar</button>
       <span>
         Total <strong>{currencyFormat(totalAmount)}</strong>
       </span>
