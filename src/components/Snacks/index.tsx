@@ -19,7 +19,7 @@ export function Snacks({ snacks }: SnacksProps) {
     <Container>
       {!snacks.length
         ? [1, 2, 3, 4].map((n) => <SkeletonSnack key={n} />)
-        : Array.isArray(snacks) && snacks?.map((snack) => {
+        : snacks.map((snack) => {
             const snackExistent = cart.find(
               (item) => item.snack === snack.snack && item.id === snack.id,
             )
