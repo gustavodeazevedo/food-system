@@ -3,7 +3,7 @@ import axios from 'axios'
 import { SnackData } from '../interfaces/SnackData'
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
+  baseURL: 'https://food-system-nine.vercel.app'
 })
 
 export const getBurgers = () => api.get<SnackData[]>('/burgers')
